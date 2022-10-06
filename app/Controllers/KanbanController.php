@@ -15,8 +15,27 @@ class KanbanController extends ResourceController
     {
         $tickets = model(Ticket::class);
 
+        $db = \Config\Database::connect();
+        $total = $db->table('tickets')->countAll();
+
+        $ticketsNoIniciados = $db->table('tickets')->like('status', 's01')->countAllResults();
+
+        $ticketsEnSeguimiento = $db->table('tickets')
+            ->like('status', 's02')
+            ->orLike('status', 's03')
+            ->orLike('status', 's04')
+            ->orLike('status', 's06')
+            ->orLike('status', 's07')
+            ->countAllResults();
+        $ticketsCerrados = $db->table('tickets')->like('status', 's05')
+            ->orLike('status', 's08')->countAllResults();
+
         $data = [
             'title' => 'Kanban',
+            'totalTickets' => $total,
+            'ticketsNoIniciados' => $ticketsNoIniciados,
+            'ticketsEnSeguimiento' => $ticketsEnSeguimiento,
+            'ticketsCerrados' => $ticketsCerrados,
             'ts01'   => $tickets->where('status', 's01')->orderBy('id', 'desc')->findAll(),
             'ts02'   => $tickets->where('status', 's02')->orderBy('id', 'desc')->findAll(),
             'ts03'   => $tickets->where('status', 's03')->orderBy('id', 'desc')->findAll(),

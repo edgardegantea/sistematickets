@@ -3,7 +3,7 @@
 
 <?= $this->section('botones') ?>
 <div class="">
-    <a href="/tickets/" class="button is-light">Cancelar</a>
+    <!-- <a href="/tickets/" class="button is-light">Cancelar</a> -->
 </div>
 <?= $this->endSection() ?>
 

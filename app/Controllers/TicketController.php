@@ -42,12 +42,15 @@ class TicketController extends ResourceController
         // $status = $builder->where('status.id', 'ASC')->get();
 
         $data = [
-            'title' => 'Tickets de soporte',
-            'total' => $total,
-            'status' => $status,
+            'title'     => 'Tickets de soporte',
+            'total'     => $total,
+            'status'    => $status,
             // // 'tickets'   => $tickets->findAll(),
             // 'tickets'   => $tickets->orderBy('status', 'ASC')->findAll()
-            'tickets' => $tickets->orderBy('id', 'desc')->findAll()
+            'tickets'   => $tickets->orderBy('id', 'desc')->findAll(),
+
+            
+
         ];
 
         return view('tickets/index', $data);

@@ -13,6 +13,33 @@
 
 
 <section class="section">
+    <div class="row">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">TICKETS NO INICIADOS</p>
+                    <p class="title has-text-danger"><?php echo $ticketsNoIniciados; ?></p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">TICKETS EN SEGUIMIENTO</p>
+                    <p class="title"><?php echo $ticketsEnSeguimiento; ?></p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">TICKETS CERRADOS</p>
+                    <p class="title has-text-primary"><?php echo $ticketsCerrados; ?></p>
+                </div>
+            </div>
+            
+        </nav>
+    </div>
+</section>
+
+
+<section class="section">
     <div class="">
         <div class="columns is-multiline is-centered cards-container" id="sectioncontainer">
             <div class="column is-one-third">
