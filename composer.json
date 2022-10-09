@@ -8,7 +8,8 @@
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
         "fakerphp/faker": "^1.9",
-        "codeigniter4/shield": "dev-develop"
+        "codeigniter4/shield": "dev-develop",
+        "dompdf/dompdf": "^2.0"
     },
     "require-dev": {
         "mikey179/vfsstream": "^1.6",

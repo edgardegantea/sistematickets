@@ -1,14 +1,18 @@
 <?= $this->extend('layout/main'); ?>
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+
+
 <?= $this->section('botones') ?>
 <div class="has-text-left">
     <a href="/tickets/new" class="button is-outlined is-light has-text-center">
         <span class="mdi mdi-24px mdi-plus-circle-outline"></span>  Nuevo
     </a>
+
+    <a href="/tickets/pdf" class="button is-outlined is-light-has-text-center"><span></span>PDF</a>
 </div>
 <?= $this->endSection() ?>
-
 
 <?= $this->section('content'); ?>
 

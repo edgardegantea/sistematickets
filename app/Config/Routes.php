@@ -42,6 +42,9 @@ $routes->get('imprimirComprobante', 'TicketController::imprimirComprobante');
 $routes->get('exportarpdf', 'TicketController::exportarPDF');
 $routes->get('exportarxlsx', 'TicketController::exportarXLSX');
 
+// Ruta para testear creación de pdf
+$routes->get('tickets/pdf', 'TicketController::generarPDF');
+
 $routes->get('tickets', 'TicketController::index');
 $routes->get('tickets/new', 'TicketController::new');
 $routes->post('tickets', 'TicketController::create');

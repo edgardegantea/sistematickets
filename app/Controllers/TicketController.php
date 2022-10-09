@@ -9,6 +9,9 @@ use App\Models\Status;
 use App\Models\Prioridad;
 use App\Models\Categoria;
 
+// Usar dompdf para la generación de PDF
+use Dompdf\Dompdf;
+
 class TicketController extends ResourceController
 {
 
@@ -248,6 +251,18 @@ class TicketController extends ResourceController
     public function imprimirComprobante() 
     {
         return view('comprobante/imprimirComprobante');
+    }
+
+    public function generarPDF()
+    {
+        $dompdf = new Dompdf();
+        $dompdf->
+
+        $dompdf->setPaper('Letter', 'portrait');
+
+        $dompdf->render();
+
+        $dompdf->stream();
     }
 
 }

@@ -1,4 +1,4 @@
-<?= $this->extend('layout/main') ?>
+<?= $this->extend('layout/basic') ?>
 
 
 <?= $this->section('botones') ?>
@@ -99,10 +99,23 @@
                     </div>
                 </div>
             </div>
+
+            <div class="column">
+                <div class="field">
+                    <label for="" class="label">Prioridad</label>
+                    <div class="control">
+                        <label class="radio">
+                            <input type="checkbox" name="priority">
+                            Urgente
+                        </label>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="field">
-            <label class="label">Descripción de la falla o situación:</label>
+            <label class="label">Describa la falla o situación:</label>
             <div class="control">
                 <textarea required class="textarea <?php if ($validation->getError('description')): ?>is-invalid<?php endif; ?>" name="description"></textarea>
 
@@ -115,7 +128,7 @@
         </div>
 
         <div class="field">
-            <label class="label">Evidencia:</label>
+            <label class="label">Adjuntar datos:</label>
             <div class="control">
                 <div class="file is-info has-name">
                     <label class="file-label">
